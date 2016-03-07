@@ -1,1 +1,32 @@
+body {
+	background-color: #b3c6ff;
+}
 
+/*.we-love-hangman {
+	display: -webkit-flex;
+    display: flex;
+    width: 400px;
+    height: 250px;
+    background-color: lightgrey;
+}*/
+
+.btn-wrap {
+	background-color: cornflowerblue;
+    width: 50px;
+    height: 50px;
+    margin: 5px;
+    position: relative;
+    display: -webkit-flex;
+    display: flex;
+}
+
+.btn-wrap a {
+	display:block;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translateY(-50%) translateX(-50%);
+	text-transform: capitalize;
+	
+	
+}
