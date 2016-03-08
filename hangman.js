@@ -3,7 +3,7 @@
 var InputBox = function() {
 	this.value = '';
 	this.dom = document.createElement('div');
-	this.dom.className = 'we-love-hangman';
+	this.dom.className = 'we-love-hangman__display';
 	// this.dom.innerHTML = 'display';
 }
 
