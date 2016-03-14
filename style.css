@@ -1,52 +1,9 @@
-body {
-	background-color: #b3c6ff;
-	font-family: arial;
+.hangman__inputs{
+  width: 50px;
+  height: 50px;
+  border: 0;
+  border-bottom: 1px solid #333;
+  margin-right: 10px;
+  font-size: 20px;
+  text-align: center;
 }
-
-.we-love-hangman__display {
-	display: table-cell;
-	vertical-align: middle;
-	text-align: center;
-    min-width: 100px;
-    margin: 0 auto;
-    height: 50px;
-    padding: 10px;
-    border: 1px solid #333;
-    background-color: #fff;
-
-}
-
-div{
-	box-sizing: border-box;
-}
-.btns-wrap {
-    display: -webkit-flex;
-    display: flex;
-	width: 900px;
-    margin: 5px;
-    position: relative;
-}
-
-.btn-wrap {
-	background: #fff;
-	border: 1px solid #ccc;
-	flex: 1;
-	height: 70px;
-	border-radius: 6px;
-	margin-right: 5px;
-}
-.btn-wrap a{
-	display: block;
-	line-height: 66px;
-	width: 100%;
-	height: 100%;
-	cursor: pointer;
-	text-align: center;
-}
-.btn-wrap a:active{
-	background-color: #ccc;
-}
-
-
-
-
