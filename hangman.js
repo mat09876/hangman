@@ -10,8 +10,10 @@
   var wrap = document.querySelector('.wrap'),
     canvas = document.getElementById("myCanvas"),
     ctx = canvas.getContext("2d"),
+
     arr = ['audi', 'bentley', 'tesla', 'bmw', 'ferrari', 'ford' , 'jaguar' , 'mercedes'],
-    curResult  = arr[Math.floor(Math.random() * arr.length)],
+    /*arr = ['cow', 'elephant', 'deer', 'lion', 'ferrari', 'ford' , 'jaguar' , 'mercedes'],*/
+    curResult  = arr[Math.floor(Math.random() * arr.length)], //learn 
     collection = Array(curResult.length),
     lives = 10,
     printLives = document.querySelector('.lives'),
@@ -60,6 +62,7 @@
   function drawHangman(part) {
     drawPart(part === 5 ? 0 : 1, part);
     if(part === 0) return alert('You Lose');
+
   }
 
   function updateHangman() {
@@ -76,25 +79,29 @@
       input.setAttribute('data-index', i);
       input.className = 'hangman__inputs';
       
-      input.onkeyup = _onKeyUp;
+      input.onkeypress = balls;
       frag.appendChild(input);
     }
     wrap.appendChild(frag); 
     input = null;
   }
 
-  function _onKeyUp(e) {
-    var target = e.target,
-      i = target.dataset.index,
-      enteredVal = target.value;
+  function balls(e) {
+    // check if its the tab key and ignore
 
-    if(curResult[i] !== enteredVal) {
+    var target = e.target,
+      i = target.dataset.index;
+    //  enteredVal = target.value;
+
+    if(curResult[i] !== String.fromCharCode(e.charCode)) {
       decrementLives();
-      target.value = '';
+     // target.value = '';
+     // e.charCode=0;
+      e.preventDefault(); // find out how to swallow the key here
     }else {
-      collection[i] = target.value;
+           collection[i] = String.fromCharCode(e.charCode);
       if(collection.join('') === curResult) {
-        alert('You Win');
+        alert('You Win'); 
       }
     }
   }
